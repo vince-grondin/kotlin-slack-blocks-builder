@@ -2,13 +2,24 @@ package eth.rochsolid.slack.blocks.models
 
 import kotlinx.serialization.SerialName
 
+/**
+ * Block elements can be added to certain [app surfaces](https://api.slack.com/surfaces)
+ * and used within certain [Block] types.
+ *
+ * Interactive components are block elements that add interactivity.
+ * All block elements are interactive components except for one: the static image element.
+ * The [handling user interactivity guide](https://api.slack.com/interactivity/handling) will help you prepare your app
+ * to use interactive components.
+ *
+ * https://api.slack.com/reference/block-kit/block-elements
+ */
 sealed interface Element {
     /**
      * The type of element.
      */
-    val type: ElementType
+    val type: Type
 
-    enum class ElementType {
+    enum class Type {
         @SerialName("button")
         BUTTON,
 
@@ -83,5 +94,9 @@ sealed interface Element {
 
         @SerialName("workflow_button")
         WORKFLOW_BUTTON,
+    }
+
+    sealed interface RichText {
+        sealed interface Input
     }
 }
