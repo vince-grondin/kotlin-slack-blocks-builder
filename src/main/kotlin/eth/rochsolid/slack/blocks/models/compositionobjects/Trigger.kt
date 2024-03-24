@@ -3,7 +3,6 @@ package eth.rochsolid.slack.blocks.models.compositionobjects
 import kotlinx.serialization.SerialName
 import java.net.URL
 
-
 /**
  * Defines an object containing trigger information.
  *

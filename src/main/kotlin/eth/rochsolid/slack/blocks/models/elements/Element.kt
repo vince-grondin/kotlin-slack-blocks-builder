@@ -28,10 +28,10 @@ sealed class Element(
         CHECKBOXES,
 
         @SerialName("datepicker")
-        DATEPICKER,
+        DATE_PICKER,
 
         @SerialName("datetimepicker")
-        DATETIMEPICKER,
+        DATETIME_PICKER,
 
         @SerialName("email_text_input")
         EMAIL_TEXT_INPUT,

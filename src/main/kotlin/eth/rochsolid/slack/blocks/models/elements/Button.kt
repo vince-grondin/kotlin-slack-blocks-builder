@@ -5,7 +5,6 @@ import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import kotlinx.serialization.SerialName
 import java.net.URL
 
-
 /**
  * Allows users a direct path to performing basic actions.
  * Interactive component - see the [guide to enabling interactivity](https://api.slack.com/interactivity/handling).
@@ -87,6 +86,13 @@ data class Button(
      * is clicked.
      */
     val confirm: ConfirmationDialog?,
+    /**
+     * Indicates whether the element will be set to autofocus within
+     * the [view object](https://api.slack.com/reference/surfaces/views).
+     * Only one element can be set to `true`. Defaults to `false`.
+     */
+    @SerialName("focus_on_load")
+    val focusOnLoad: Boolean? = false,
     /**
      * A label for longer descriptive text about a button element.
      * This label will be read out by screen readers instead of the button [Text] object.

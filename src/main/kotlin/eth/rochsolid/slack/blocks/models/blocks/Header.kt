@@ -1,5 +1,6 @@
 package eth.rochsolid.slack.blocks.models.blocks
 
+import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import kotlinx.serialization.SerialName
 
 
@@ -32,5 +33,5 @@ data class Header(
      * The text for the block, in the form of a [CompositionObject.Text.PlainText] text object.
      * Maximum length for the text in this field is 150 characters.
      */
-    val text: CompositionObject.Text.PlainText
+    val text: Text.PlainText
 ) : Block(type = Type.HEADER)

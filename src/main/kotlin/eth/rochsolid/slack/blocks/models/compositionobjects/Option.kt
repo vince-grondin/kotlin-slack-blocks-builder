@@ -2,7 +2,6 @@ package eth.rochsolid.slack.blocks.models.compositionobjects
 
 import java.net.URL
 
-
 /**
  * Defines a single item in a number of item selection elements.
  *

@@ -1,8 +1,8 @@
 package eth.rochsolid.slack.blocks.models.elements
 
 import eth.rochsolid.slack.blocks.models.compositionobjects.ConfirmationDialog
+import eth.rochsolid.slack.blocks.models.compositionobjects.Option
 import kotlinx.serialization.SerialName
-
 
 /**
  * Allows users to choose multiple items from a list of options.
@@ -79,16 +79,25 @@ data class Checkboxes(
     @SerialName("action_id")
     val actionId: ActionID?,
     /**
-     * An array of option objects. A maximum of 10 options are allowed.
+     * A list of [Option] option objects. A maximum of 10 options are allowed.
      */
-    val options: Int,
+    val options: List<Option>,
+    /**
+     * A list of [Option] option objects that exactly matches one or more of the options within options.
+     * These options will be selected when the checkbox group initially loads.
+     */
     @SerialName("initial_options")
-    val initialOptions: Int,
+    val initialOptions: List<Option>?,
     /**
      * A [ConfirmationDialog] object that defines an optional confirmation dialog that appears
      * after clicking one of the checkboxes in this element.
      */
     val confirm: ConfirmationDialog?,
+    /**
+     * Indicates whether the element will be set to autofocus within
+     * the [view object](https://api.slack.com/reference/surfaces/views).
+     * Only one element can be set to `true`. Defaults to `false`.
+     */
     @SerialName("focus_on_load")
-    val focusOnLoad: Int
+    val focusOnLoad: Boolean? = false
 ) : Element(type = Type.CHECKBOXES)

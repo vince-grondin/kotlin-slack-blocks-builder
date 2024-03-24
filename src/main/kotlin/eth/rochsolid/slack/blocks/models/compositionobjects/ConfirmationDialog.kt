@@ -2,7 +2,6 @@ package eth.rochsolid.slack.blocks.models.compositionobjects
 
 import kotlinx.serialization.SerialName
 
-
 /**
  * Defines a dialog that adds a confirmation step to interactive elements.
  * An object that defines a dialog that provides a confirmation step to any interactive element.

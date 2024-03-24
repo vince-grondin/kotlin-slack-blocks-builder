@@ -3,7 +3,6 @@ package eth.rochsolid.slack.blocks.models.compositionobjects
 import kotlinx.serialization.Serializable
 import java.net.URL
 
-
 /**
  * Defines an object containing Slack file information to be used in an image block or image element.
  *

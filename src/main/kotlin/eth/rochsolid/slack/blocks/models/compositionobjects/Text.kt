@@ -2,7 +2,6 @@ package eth.rochsolid.slack.blocks.models.compositionobjects
 
 import kotlinx.serialization.SerialName
 
-
 /**
  * Defines an object containing some text.
  * Formatted either as [TextType.PLAIN_TEXT]

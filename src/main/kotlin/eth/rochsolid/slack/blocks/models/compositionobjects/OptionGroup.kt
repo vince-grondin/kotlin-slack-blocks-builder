@@ -1,6 +1,5 @@
 package eth.rochsolid.slack.blocks.models.compositionobjects
 
-
 /**
  * Defines a way to group options in a menu.
  *
