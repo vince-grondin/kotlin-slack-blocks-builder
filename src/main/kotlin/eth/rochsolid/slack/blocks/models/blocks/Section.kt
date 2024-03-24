@@ -1,5 +1,6 @@
 package eth.rochsolid.slack.blocks.models.blocks
 
+import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import eth.rochsolid.slack.blocks.models.elements.Element
 import kotlinx.serialization.SerialName
 
@@ -40,7 +41,7 @@ sealed class Section(
          * The text for the block, in the form of a [CompositionObject.Text] text object.
          * Minimum length for the text in this field is 1 and maximum length is 3000 characters.
          */
-        val text: CompositionObject.Text
+        val text: Text
     )
 
     /**
@@ -96,11 +97,11 @@ sealed class Section(
          * Maximum length for the text in each item is 2000 characters.
          * [Click here for an example](https://api.slack.com/tools/block-kit-builder?blocks=%5B%0A%09%7B%0A%09%09%22type%22%3A%20%22section%22%2C%0A%09%09%22text%22%3A%20%7B%0A%09%09%09%22text%22%3A%20%22A%20message%20*with%20some%20bold%20text*%20and%20_some%20italicized%20text_.%22%2C%0A%09%09%09%22type%22%3A%20%22mrkdwn%22%0A%09%09%7D%2C%0A%09%09%22fields%22%3A%20%5B%0A%09%09%09%7B%0A%09%09%09%09%22type%22%3A%20%22mrkdwn%22%2C%0A%09%09%09%09%22text%22%3A%20%22*Priority*%22%0A%09%09%09%7D%2C%0A%09%09%09%7B%0A%09%09%09%09%22type%22%3A%20%22mrkdwn%22%2C%0A%09%09%09%09%22text%22%3A%20%22*Type*%22%0A%09%09%09%7D%2C%0A%09%09%09%7B%0A%09%09%09%09%22type%22%3A%20%22plain_text%22%2C%0A%09%09%09%09%22text%22%3A%20%22High%22%0A%09%09%09%7D%2C%0A%09%09%09%7B%0A%09%09%09%09%22type%22%3A%20%22plain_text%22%2C%0A%09%09%09%09%22text%22%3A%20%22String%22%0A%09%09%09%7D%0A%09%09%5D%0A%09%7D%0A%5D).
          */
-        val fields: List<CompositionObject.Text>,
+        val fields: List<Text>,
         /**
          * The text for the block, in the form of a [CompositionObject.Text] text object.
          * Minimum length for the text in this field is 1 and maximum length is 3000 characters.
          */
-        val text: CompositionObject.Text?
+        val text: Text?
     )
 }

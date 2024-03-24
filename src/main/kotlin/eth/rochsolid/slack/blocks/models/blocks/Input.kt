@@ -1,5 +1,6 @@
 package eth.rochsolid.slack.blocks.models.blocks
 
+import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import eth.rochsolid.slack.blocks.models.elements.Element
 import kotlinx.serialization.SerialName
 
@@ -38,7 +39,7 @@ data class Input(
      * A label that appears above an input element in the form of a [CompositionObject.Text.PlainText].
      * Maximum length for the text in this field is 2000 characters.
      */
-    val label: CompositionObject.Text.PlainText,
+    val label: Text.PlainText,
     /**
      * A [Element]
      */
@@ -54,7 +55,7 @@ data class Input(
      * An optional hint that appears below an input element in a lighter grey.
      * Maximum length for the text in this field is 2000 characters.
      */
-    val hint: CompositionObject.Text.PlainText?,
+    val hint: Text.PlainText?,
     /**
      * A boolean that indicates whether the input element may be empty when a user submits the modal.
      * Defaults to false.
