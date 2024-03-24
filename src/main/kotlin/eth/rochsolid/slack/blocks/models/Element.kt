@@ -26,7 +26,7 @@ sealed class Element(
         BUTTON,
 
         @SerialName("checkboxes")
-        CHECKBOX,
+        CHECKBOXES,
 
         @SerialName("datepicker")
         DATEPICKER,
@@ -299,7 +299,7 @@ sealed class Element(
         val confirm: CompositionObject.ConfirmationDialog?,
         @SerialName("focus_on_load")
         val focusOnLoad: Int
-    ) : Element(type = Type.CHECKBOX)
+    ) : Element(type = Type.CHECKBOXES)
 
     sealed interface RichText {
         sealed interface Input
