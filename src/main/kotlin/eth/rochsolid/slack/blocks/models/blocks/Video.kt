@@ -1,5 +1,6 @@
 package eth.rochsolid.slack.blocks.models.blocks
 
+import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import kotlinx.serialization.SerialName
 import java.net.URL
 
@@ -95,7 +96,7 @@ data class Video(
      * Description for video in the form of a [CompositionObject.Text.PlainText] object.
      * `text` within must be less than 200 characters.
      */
-    val description: CompositionObject.Text.PlainText?,
+    val description: Text.PlainText?,
     /**
      * Icon for the video provider, e.g. YouTube icon.
      */
@@ -115,7 +116,7 @@ data class Video(
      * Video title in the form of a [CompositionObject.Text.PlainText].
      * `text` within must be less than 200 characters.
      */
-    val title: CompositionObject.Text.PlainText,
+    val title: Text.PlainText,
     /**
      * Hyperlink for the title text.
      * Must correspond to the non-embeddable URL for the video.

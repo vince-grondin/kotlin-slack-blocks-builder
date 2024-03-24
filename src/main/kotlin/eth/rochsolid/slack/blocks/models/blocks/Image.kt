@@ -1,5 +1,6 @@
 package eth.rochsolid.slack.blocks.models.blocks
 
+import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import kotlinx.serialization.SerialName
 
 
@@ -53,7 +54,7 @@ import kotlinx.serialization.SerialName
  */
 sealed class Image : Block(type = Type.IMAGE) {
     abstract val altText: String
-    abstract val title: CompositionObject.Text.PlainText?
+    abstract val title: Text.PlainText?
 
     data class Url(
         /**
@@ -80,7 +81,7 @@ sealed class Image : Block(type = Type.IMAGE) {
          * An optional title for the image in the form.
          * Maximum length for the text in this field is 2000 characters.
          */
-        override val title: CompositionObject.Text.PlainText?
+        override val title: Text.PlainText?
     ) : Image()
 
     /**
@@ -106,6 +107,6 @@ sealed class Image : Block(type = Type.IMAGE) {
          * An optional title for the image in the form.
          * Maximum length for the text in this field is 2000 characters.
          */
-        override val title: CompositionObject.Text.PlainText?
+        override val title: Text.PlainText?
     ) : Image()
 }
