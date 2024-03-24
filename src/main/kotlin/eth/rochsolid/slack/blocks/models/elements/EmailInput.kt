@@ -59,21 +59,4 @@ data class EmailInput(
      * Maximum length for the `text` in this field is 150 characters.
      */
     val placeholder: Text.PlainText
-) : Element(type = Type.EMAIL_TEXT_INPUT) {
-
-    enum class Style {
-        /**
-         * [DANGER] gives buttons a red outline and text, and should be used when the action is destructive.
-         * Use [DANGER] even more sparingly than primary.
-         */
-        @SerialName("danger")
-        DANGER,
-
-        /**
-         * [PRIMARY] gives buttons a green outline and text, ideal for affirmation or confirmation actions.
-         * [PRIMARY] should only be used for one button within a set.
-         */
-        @SerialName("primary")
-        PRIMARY,
-    }
-}
+) : Element(type = Type.EMAIL_TEXT_INPUT)

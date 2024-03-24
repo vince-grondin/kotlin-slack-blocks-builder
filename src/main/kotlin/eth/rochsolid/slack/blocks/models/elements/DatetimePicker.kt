@@ -63,21 +63,4 @@ data class DatetimePicker(
      */
     @SerialName("initial_date_time")
     val initialDateTime: Instant?
-) : Element(type = Type.DATETIME_PICKER) {
-
-    enum class Style {
-        /**
-         * [DANGER] gives buttons a red outline and text, and should be used when the action is destructive.
-         * Use [DANGER] even more sparingly than primary.
-         */
-        @SerialName("danger")
-        DANGER,
-
-        /**
-         * [PRIMARY] gives buttons a green outline and text, ideal for affirmation or confirmation actions.
-         * [PRIMARY] should only be used for one button within a set.
-         */
-        @SerialName("primary")
-        PRIMARY,
-    }
-}
+) : Element(type = Type.DATETIME_PICKER)
