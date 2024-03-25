@@ -2,6 +2,9 @@ package eth.rochsolid.slack.blocks.models.shared
 
 import kotlinx.serialization.SerialName
 
+/**
+ * [Possible `filetype` values.](https://api.slack.com/types/file#types)
+ */
 enum class FileExtension(val description: String) {
     @SerialName("auto")
     AUTO_DETECT_TYPE("Auto Detect Type"),
