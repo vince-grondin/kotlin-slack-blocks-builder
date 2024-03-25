@@ -355,10 +355,10 @@ enum class FileExtension(val description: String) {
     EXCEL_SPREADSHEET_EXTENDED("Extended Excel spreadsheet"),
 
     @SerialName("xlsb")
-    EXCEL_SPREADSHEET_BINARY_MACRO_ENABLED("Excel Spreadsheet @SerialName(Binary, Macro Enabled)"),
+    EXCEL_SPREADSHEET_BINARY_MACRO_ENABLED("Excel Spreadsheet"),
 
     @SerialName("xlsm")
-    EXCEL_SPREADSHEET_MACRO_ENABLED("Excel Spreadsheet @SerialName(Macro Enabled)"),
+    EXCEL_SPREADSHEET_MACRO_ENABLED("Excel Spreadsheet"),
 
     @SerialName("xltx")
     EXCEL_TEMPLATE("Excel template"),
