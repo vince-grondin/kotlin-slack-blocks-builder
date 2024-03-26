@@ -36,7 +36,7 @@ data class EmailInput(
      * Maximum length is 255 characters.
      */
     @SerialName("action_id")
-    val actionId: ActionID?,
+    override val actionID: ActionID?,
     /**
      * A dispatch configuration object that determines when during text input the element returns a [`block_actions` payload](https://api.slack.com/reference/interaction-payloads/block-actions).
      */

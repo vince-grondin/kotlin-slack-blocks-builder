@@ -62,7 +62,7 @@ data class Button(
      * Maximum length is 255 characters.
      */
     @SerialName("action_id")
-    val actionId: ActionID?,
+    override val actionID: ActionID?,
     /**
      * A URL to load in the user's browser when the button is clicked.
      * Maximum length is 3000 characters.

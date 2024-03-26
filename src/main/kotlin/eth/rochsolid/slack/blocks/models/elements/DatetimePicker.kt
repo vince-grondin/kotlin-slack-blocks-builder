@@ -42,7 +42,7 @@ data class DatetimePicker(
      * Maximum length is 255 characters.
      */
     @SerialName("action_id")
-    val actionId: ActionID?,
+    override val actionID: ActionID?,
     /**
      * A [ConfirmationDialog] object that defines an optional confirmation dialog after the button
      * is clicked.
