@@ -11,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.assertk.core)
+    implementation(libs.junit.jupiter)
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation(libs.kotlinx.serialization.json)
 }
 
