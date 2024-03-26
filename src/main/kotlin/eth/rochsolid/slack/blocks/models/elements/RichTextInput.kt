@@ -5,7 +5,6 @@ import eth.rochsolid.slack.blocks.models.compositionobjects.DispatchActionConfig
 import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import kotlinx.serialization.SerialName
 
-
 /**
  * Allows users to enter formatted text in a WYSIWYG composer, offering the same messaging writing experience as in Slack.
  * Interactive component - see the [guide to enabling interactivity](https://api.slack.com/interactivity/handling).
@@ -37,7 +36,7 @@ data class RichTextInput(
      * Maximum length is 255 characters.
      */
     @SerialName("action_id")
-    val actionId: ActionID?,
+    override val actionID: ActionID?,
     /**
      * A dispatch configuration object that determines when during text input the element returns a
      * [`block_actions` payload](https://api.slack.com/reference/interaction-payloads/block-actions).

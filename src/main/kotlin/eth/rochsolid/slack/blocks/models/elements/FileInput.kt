@@ -39,7 +39,7 @@ data class FileInput(
      * Maximum length is 255 characters.
      */
     @SerialName("action_id")
-    val actionId: ActionID?,
+    override val actionID: ActionID?,
     /**
      * A set of valid [FileExtension] [file extensions](https://api.slack.com/types/file#types) that will be accepted
      * for this element.

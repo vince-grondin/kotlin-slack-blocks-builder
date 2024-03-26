@@ -77,7 +77,7 @@ data class Checkboxes(
      * Maximum length is 255 characters.
      */
     @SerialName("action_id")
-    val actionId: ActionID?,
+    override val actionID: ActionID?,
     /**
      * A list of [Option] option objects. A maximum of 10 options are allowed.
      */
