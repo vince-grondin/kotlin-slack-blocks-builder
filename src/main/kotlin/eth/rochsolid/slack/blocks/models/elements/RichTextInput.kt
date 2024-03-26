@@ -1,34 +1,35 @@
 package eth.rochsolid.slack.blocks.models.elements
 
+import eth.rochsolid.slack.blocks.models.blocks.RichText
 import eth.rochsolid.slack.blocks.models.compositionobjects.DispatchActionConfiguration
 import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import kotlinx.serialization.SerialName
 
+
 /**
- * Allows user to enter an email into a single-line field.
+ * Allows users to enter formatted text in a WYSIWYG composer, offering the same messaging writing experience as in Slack.
  * Interactive component - see the [guide to enabling interactivity](https://api.slack.com/interactivity/handling).
  *
  * Example:
+ * - An input block containing a rich text input element.
  * ```json
  * {
- *   "type": "input",
- *   "block_id": "input123",
- *   "label": {
- *     "type": "plain_text",
- *     "text": "Email Address"
+ *   "type": "rich_text_input",
+ *   "action_id": "rich_text_input-action",
+ *   "dispatch_action_config": {
+ *     "trigger_actions_on": [
+ *       "on_character_entered"
+ *     ]
  *   },
- *   "element": {
- *     "type": "email_text_input",
- *     "action_id": "email_text_input-action",
- *     "placeholder": {
- *       "type": "plain_text",
- *       "text": "Enter an email"
- *     }
+ *   "focus_on_load": true,
+ *   "placeholder": {
+ *     "type": "plain_text",
+ *     "text": "Enter text"
  *   }
  * }
  * ```
  */
-data class EmailInput(
+data class RichTextInput(
     /**
      * An identifier for this action.
      * You can use this when you receive an interaction payload to identify the source of the action.
@@ -38,15 +39,16 @@ data class EmailInput(
     @SerialName("action_id")
     val actionId: ActionID?,
     /**
-     * A dispatch configuration object that determines when during text input the element returns a [`block_actions` payload](https://api.slack.com/reference/interaction-payloads/block-actions).
+     * A dispatch configuration object that determines when during text input the element returns a
+     * [`block_actions` payload](https://api.slack.com/reference/interaction-payloads/block-actions).
      */
     @SerialName("dispatch_action_config")
     val dispatchActionConfig: DispatchActionConfiguration?,
     /**
-     * The initial value in the email input when it is loaded.
+     * The initial value in the rich text input when it is loaded.
      */
     @SerialName("initial_value")
-    val initialValue: String?,
+    val initialValue: RichText?,
     /**
      * Indicates whether the element will be set to autofocus within
      * the [view object](https://api.slack.com/reference/surfaces/views).
@@ -59,4 +61,4 @@ data class EmailInput(
      * Maximum length for the `text` in this field is 150 characters.
      */
     val placeholder: Text.PlainText?
-) : Element(type = Type.EMAIL_TEXT_INPUT)
+) : Element(type = Type.RICH_TEXT_INPUT)

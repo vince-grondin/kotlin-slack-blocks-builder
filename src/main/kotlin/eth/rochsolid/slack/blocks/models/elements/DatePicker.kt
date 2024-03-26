@@ -60,5 +60,5 @@ data class DatePicker(
      * Defines the placeholder text shown on the date picker.
      * Maximum length for the `text` in this field is 150 characters.
      */
-    val placeholder: Text.PlainText
+    val placeholder: Text.PlainText?
 ) : Element(type = Type.DATE_PICKER)
