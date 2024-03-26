@@ -1,5 +1,9 @@
 [versions]
+assertk = "0.28.0"
 kotlinxSerialization = "1.6.3"
+junit = "5.10.2"
 
 [libraries]
+assertk_core = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertk" }
 kotlinx_serialization_json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+junit_jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
