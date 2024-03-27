@@ -1,10 +1,12 @@
 package eth.rochsolid.slack.blocks.dsl.compositionobjects
 
+import eth.rochsolid.slack.blocks.dsl.BlockDslMarker
 import eth.rochsolid.slack.blocks.models.compositionobjects.ConfirmationDialog
 
 /**
  * [ConfirmationDialog] builder.
  */
+@BlockDslMarker
 class ConfirmationDialogBuilder {
     private lateinit var confirm: PlainTextBuilder
     private lateinit var deny: PlainTextBuilder
