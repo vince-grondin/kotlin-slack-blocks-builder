@@ -100,7 +100,7 @@ data class Button(
      */
     @SerialName("accessibility_label")
     val accessibilityLabel: String?
-) : Element(type = Type.BUTTON) {
+) : ActionableElement(type = Type.BUTTON) {
 
     enum class Style {
         /**

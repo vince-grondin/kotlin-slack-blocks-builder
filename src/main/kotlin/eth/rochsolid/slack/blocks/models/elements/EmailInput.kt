@@ -59,4 +59,4 @@ data class EmailInput(
      * Maximum length for the `text` in this field is 150 characters.
      */
     val placeholder: Text.PlainText?
-) : Element(type = Type.EMAIL_TEXT_INPUT)
+) : ActionableElement(type = Type.EMAIL_TEXT_INPUT)

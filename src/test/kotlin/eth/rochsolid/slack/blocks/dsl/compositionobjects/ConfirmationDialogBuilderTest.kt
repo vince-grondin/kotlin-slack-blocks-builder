@@ -8,28 +8,23 @@ import eth.rochsolid.slack.blocks.models.compositionobjects.ConfirmationDialog
 import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
+import java.util.stream.Stream
 
 internal class ConfirmationDialogBuilderTest {
-    @Test
-    @DisplayName(
-        "Given all fields are specified " +
-                "And the button uses the primary style " +
-                "When building " +
-                "Then an instance of the confirmation dialog is returned with all the fields populated " +
-                "And the primary style"
-    )
-    fun t1() {
-        val result = ConfirmationDialogBuilder().apply {
-            title("Are you sure?")
-            text("Wouldn't you prefer a good game of chess?")
-            confirm("Do it :grinning:") {
-                emoji = true
-            }
-            deny("Stop, I've changed my mind!")
-            primaryStyle()
-        }.build()
-
-        assertThat(result).isEqualTo(
+    private fun successScenarios(): Stream<Arguments> = Stream.of(
+        Arguments.of(
+            ConfirmationDialogBuilder().apply {
+                title("Are you sure?")
+                text("Wouldn't you prefer a good game of chess?")
+                confirm("Do it :grinning:") {
+                    emoji = true
+                }
+                deny("Stop, I've changed my mind!")
+                primaryStyle()
+            },
             ConfirmationDialog(
                 title = Text.PlainText(
                     emoji = null,
@@ -49,29 +44,17 @@ internal class ConfirmationDialogBuilderTest {
                 ),
                 style = ConfirmationDialog.Style.PRIMARY
             )
-        )
-    }
-
-    @Test
-    @DisplayName(
-        "Given all fields are specified " +
-                "And the button uses the danger style " +
-                "When building " +
-                "Then an instance of the confirmation dialog is returned with all the fields populated " +
-                "And the danger style"
-    )
-    fun t2() {
-        val result = ConfirmationDialogBuilder().apply {
-            title("Are you sure?")
-            text("Wouldn't you prefer a good game of chess?")
-            confirm("Do it")
-            deny("Stop, I've changed my mind! :grinning:") {
-                emoji = true
-            }
-            dangerStyle()
-        }.build()
-
-        assertThat(result).isEqualTo(
+        ),
+        Arguments.of(
+            ConfirmationDialogBuilder().apply {
+                title("Are you sure?")
+                text("Wouldn't you prefer a good game of chess?")
+                confirm("Do it")
+                deny("Stop, I've changed my mind! :grinning:") {
+                    emoji = true
+                }
+                dangerStyle()
+            },
             ConfirmationDialog(
                 title = Text.PlainText(
                     emoji = null,
@@ -92,6 +75,19 @@ internal class ConfirmationDialogBuilderTest {
                 style = ConfirmationDialog.Style.DANGER
             )
         )
+    )
+
+    @ParameterizedTest
+    @MethodSource("successScenarios")
+    @DisplayName(
+        "Given a builder instance created via the DSL " +
+                "When building " +
+                "Then an instance of the type is created as expected"
+    )
+    fun t1(builder: ConfirmationDialogBuilder, expected: ConfirmationDialog) {
+        val result = builder.build()
+
+        assertThat(result).isEqualTo(expected)
     }
 
     @Test
@@ -100,7 +96,7 @@ internal class ConfirmationDialogBuilderTest {
                 "When building " +
                 "Then a UninitializedPropertyAccessException exception is thrown"
     )
-    fun t3() {
+    fun t2() {
         assertFailure {
             ConfirmationDialogBuilder().apply {
                 title("Are you sure?")

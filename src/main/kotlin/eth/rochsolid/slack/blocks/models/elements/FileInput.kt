@@ -55,4 +55,4 @@ data class FileInput(
      * Defaults to 10 if not specified.
      */
     val maxFiles: Int? = DEFAULT_NUMBER_OF_UPLOADABLE_FILES
-) : Element(type = Type.FILE_INPUT)
+) : ActionableElement(type = Type.FILE_INPUT)

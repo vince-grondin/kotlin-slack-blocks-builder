@@ -20,15 +20,6 @@ sealed class Element(
      */
     val type: Type
 ) {
-    /**
-     * An identifier for this action.
-     * You can use this when you receive an interaction payload to identify the source of the action.
-     * Should be unique among all other `action_id`s in the containing block.
-     * Maximum length is 255 characters.
-     */
-    @SerialName("action_id")
-    abstract val actionID: ActionID?
-
     enum class Type {
         @SerialName("button")
         BUTTON,
@@ -105,6 +96,17 @@ sealed class Element(
         @SerialName("workflow_button")
         WORKFLOW_BUTTON,
     }
+}
+
+sealed class ActionableElement(type: Type) : Element(type) {
+    /**
+     * An identifier for this action.
+     * You can use this when you receive an interaction payload to identify the source of the action.
+     * Should be unique among all other `action_id`s in the containing block.
+     * Maximum length is 255 characters.
+     */
+    @SerialName("action_id")
+    abstract val actionID: ActionID?
 
     /**
      * An action identifier.

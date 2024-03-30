@@ -60,4 +60,4 @@ data class RichTextInput(
      * Maximum length for the `text` in this field is 150 characters.
      */
     val placeholder: Text.PlainText?
-) : Element(type = Type.RICH_TEXT_INPUT)
+) : ActionableElement(type = Type.RICH_TEXT_INPUT)
