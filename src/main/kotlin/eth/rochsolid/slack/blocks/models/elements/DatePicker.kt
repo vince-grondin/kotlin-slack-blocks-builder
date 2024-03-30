@@ -61,4 +61,4 @@ data class DatePicker(
      * Maximum length for the `text` in this field is 150 characters.
      */
     val placeholder: Text.PlainText?
-) : Element(type = Type.DATE_PICKER)
+) : ActionableElement(type = Type.DATE_PICKER)

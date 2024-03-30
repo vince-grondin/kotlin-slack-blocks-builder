@@ -3,8 +3,8 @@ package eth.rochsolid.slack.blocks.dsl.elements
 import eth.rochsolid.slack.blocks.dsl.BlockDslMarker
 import eth.rochsolid.slack.blocks.dsl.compositionobjects.ConfirmationDialogBuilder
 import eth.rochsolid.slack.blocks.dsl.compositionobjects.PlainTextBuilder
+import eth.rochsolid.slack.blocks.models.elements.ActionableElement
 import eth.rochsolid.slack.blocks.models.elements.Button
-import eth.rochsolid.slack.blocks.models.elements.Element
 import java.net.URL
 
 @BlockDslMarker
@@ -20,7 +20,7 @@ class ButtonBuilder(text: String) : ElementBuilder<Button>() {
 
     override fun build(): Button = Button(
         accessibilityLabel = accessibilityLabel,
-        actionID = actionID?.let(Element::ActionID),
+        actionID = actionID?.let(ActionableElement::ActionID),
         confirm = confirm?.build(),
         focusOnLoad = focusOnLoad,
         style = style,

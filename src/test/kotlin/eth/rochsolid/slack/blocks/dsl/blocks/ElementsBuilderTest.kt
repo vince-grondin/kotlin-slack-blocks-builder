@@ -4,6 +4,7 @@ import assertk.assertThat
 import assertk.assertions.isEqualTo
 import eth.rochsolid.slack.blocks.models.compositionobjects.ConfirmationDialog
 import eth.rochsolid.slack.blocks.models.compositionobjects.Text
+import eth.rochsolid.slack.blocks.models.elements.ActionableElement
 import eth.rochsolid.slack.blocks.models.elements.Button
 import eth.rochsolid.slack.blocks.models.elements.Element
 import org.junit.jupiter.api.DisplayName
@@ -42,7 +43,7 @@ internal class ElementsBuilderTest {
             },
             listOf(
                 Button(
-                    actionID = Element.ActionID("button"),
+                    actionID = ActionableElement.ActionID("button"),
                     text = Text.PlainText(
                         emoji = null,
                         text = "Click Me"

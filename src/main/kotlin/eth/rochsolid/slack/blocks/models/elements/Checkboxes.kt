@@ -100,4 +100,4 @@ data class Checkboxes(
      */
     @SerialName("focus_on_load")
     val focusOnLoad: Boolean? = false
-) : Element(type = Type.CHECKBOXES)
+) : ActionableElement(type = Type.CHECKBOXES)

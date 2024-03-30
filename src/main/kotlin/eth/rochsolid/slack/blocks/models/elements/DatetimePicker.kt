@@ -63,4 +63,4 @@ data class DatetimePicker(
      */
     @SerialName("initial_date_time")
     val initialDateTime: Instant?
-) : Element(type = Type.DATETIME_PICKER)
+) : ActionableElement(type = Type.DATETIME_PICKER)
