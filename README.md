@@ -1,6 +1,6 @@
 ##  Slack Block Kotlin DSL for Effortless Block Building
 
-This ibrary provides a user-friendly Kotlin DSL for building
+This library provides a user-friendly Kotlin DSL for building
 [Slack Blocks](https://api.slack.com/reference/block-kit#blocks), simplifying the process of creating interactive and 
 visually appealing messages within your Slack applications.
 
