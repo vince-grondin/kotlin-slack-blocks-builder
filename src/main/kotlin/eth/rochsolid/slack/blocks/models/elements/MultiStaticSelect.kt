@@ -56,37 +56,12 @@ import kotlinx.serialization.SerialName
  * ]
  * ```
  */
-sealed class MultiStaticSelect : ActionableElement(type = Type.MULTI_STATIC_SELECT) {
+sealed class MultiStaticSelect : ActionableElement(type = Type.MULTI_STATIC_SELECT), MultiSelect {
     /**
      * A list of [Option] option objects that exactly matches one or more of the options within options.
      * These options will be selected when the checkbox group initially loads.
      */
     abstract val initialOptions: List<Option>?
-
-    /**
-     * A [ConfirmationDialog] object that defines an optional confirmation dialog that appears
-     * after clicking one of the checkboxes in this element.
-     */
-    abstract val confirm: ConfirmationDialog?
-
-    /**
-     * Indicates whether the element will be set to autofocus within
-     * the [view object](https://api.slack.com/reference/surfaces/views).
-     * Only one element can be set to `true`. Defaults to `false`.
-     */
-    abstract val focusOnLoad: Boolean?
-
-    /**
-     * Specifies the maximum number of items that can be selected in the menu.
-     * Minimum number is 1.
-     */
-    abstract val maxSelectedItems: Int?
-
-    /**
-     * Defines the placeholder text shown on the date picker.
-     * Maximum length for the `text` in this field is 150 characters.
-     */
-    abstract val placeholder: Text.PlainText?
 
     /**
      * Multi-static select populated with [Option]s
