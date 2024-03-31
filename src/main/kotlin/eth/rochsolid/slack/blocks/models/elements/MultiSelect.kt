@@ -12,14 +12,13 @@ import kotlinx.serialization.SerialName
  * part or all of an option string to filter the list.
  *
  * There are different types of multi-select menu that depend on different data sources for their lists of options:
- * - Menu with static options
+ * - [MultiStaticSelect] Menu with static options
  * - Menu with external data source
  * - Menu with user list
  * - Menu with conversations list
  * - Menu with channels list
  */
 sealed interface MultiSelect {
-
     /**
      * A [ConfirmationDialog] object that defines an optional confirmation dialog that appears
      * after clicking one of the checkboxes in this element.
