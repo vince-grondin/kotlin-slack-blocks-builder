@@ -1,7 +1,7 @@
 package eth.rochsolid.slack.blocks.models.elements
 
-import eth.rochsolid.slack.blocks.models.compositionobjects.*
-import kotlinx.serialization.SerialName
+import eth.rochsolid.slack.blocks.models.compositionobjects.ConfirmationDialog
+import eth.rochsolid.slack.blocks.models.compositionobjects.Text
 
 /**
  * Allows users to select multiple items from a list of options.
