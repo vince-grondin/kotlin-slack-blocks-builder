@@ -3,7 +3,6 @@ package eth.rochsolid.slack.blocks.models.elements
 import eth.rochsolid.slack.blocks.models.compositionobjects.*
 import kotlinx.serialization.SerialName
 
-
 /**
  * Allows users to select multiple items from a list of options.
  * Interactive component - see the [guide to enabling interactivity](https://api.slack.com/interactivity/handling).
